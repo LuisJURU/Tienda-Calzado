@@ -1,0 +1,239 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code{
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace; 
+}
+
+body {
+  background-image: url('src/images/—Pngtree—carnival interface design web material_917157.jpg');
+  background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+  background-attachment: fixed; /* Hace que el fondo permanezca fijo al hacer scroll */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  min-height: 100vh; /* Asegura que el body tenga al menos la altura de la ventana */
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  max-width: 1200px;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-shadow: 0 5px 30px #002132a4;
+  padding: 0 15px;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+
+/* ---------------------HEADER----------------------- */
+header{
+width: 97%;
+min-height: 100px;
+max-width: 1170px;
+overflow: hidden;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-wrap: wrap;
+position: fixed;
+box-sizing: border-box;
+background-color: white;
+box-shadow: 0 5px 10px #002a3ba4;
+border-radius: 0 0 10px 10px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+
+}
+
+a:hover{
+  color: #088ea0;
+}
+
+li{
+  list-style: none;
+}
+
+header ul{  
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+header ul li{
+  padding: 0 1rem;
+}
+
+header ul li a{
+  font-weight: bold;
+}
+
+header .cart{
+  position: relative;
+  cursor: pointer;
+}
+
+header .cart box-icon{
+  width: 45px;
+  height: 45px;
+}
+
+header .cart span{
+  position: absolute;
+  top: -.5rem;
+  right: -1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #088ea0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0rem;
+  font-size: 1rem;
+  font-weight: 700;;
+}
+
+
+/* ---------------------INICIO----------------------- */
+.inicio{
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 9rem;
+  color: #000000;
+}
+
+.inicio h1{
+  font-size: 2.5rem;
+  color: #088ea0;
+}
+
+.inicio img{
+  width: 100%;
+  
+}
+
+
+
+/* ---------------------PRODUCTS----------------------- */
+.title{
+  font-size: 2.4rem;
+  padding: 10rem 0 0 0;
+  color: #000000;
+}
+
+.productos{
+  padding: 5rem 1rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 3rem 2rem;
+  box-sizing: border-box;
+}
+
+.producto{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 10px 10px 2px rgba(0, 0, 0, .2);
+  border: 6px solid transparent;
+  border-radius: 5px;
+}
+
+.producto:hover{
+  border: 6px solid #088ea025;
+  border-radius: 5px;
+}
+
+.producto_img img{
+  width: 310px;
+}
+
+.producto_footer{
+  padding: 1rem;
+}
+
+.producto_footer h1{
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.producto_footer p{
+  font-weight: 700;
+  color: rgba(0, 0, 0, .55);
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.producto_footer .price{
+  font-size: 2rem;
+  color: #1a202c;
+}
+
+.producto .bottom{
+  width: 100%;
+  height: 45px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem 3rem;
+  padding:0 1rem ;
+  margin: 1rem;
+}
+
+.bottom .btn{
+border: none;
+outline: 0;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.bottom button{
+  background-color: rgb(41, 104, 238);
+  max-width: 250px;
+  width: 100%;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+}
+
+.bottom div {
+  background-color: #088ea0;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  margin-left: -2rem;
+  border-radius: 5px;
+}
+
+.bottom div a{
+  color: white;
+  font-weight: 700;
+
+}
+
+.bottom div a:hover{
+  color: #ffffff;
+}
+
+
+/* ---------------------MEDIAQUERYS----------------------- */
+@media only screen and (max-width: 600px){
+  header ul{
+    display: none;
+  }
+}
+
