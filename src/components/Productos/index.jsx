@@ -1,68 +1,35 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import IMG from "../../images/img01.jpg";
+import React, {useContext} from "react";
+import {DataContext} from '../../Context/Dataprovider'
+import Productoitem from './Productoitem'
 
 export const ProductosLista = () => {
+
+  const value = useContext(DataContext)
+  const [productos] = value.productos
+
+  console.log(productos);
+
+
   return (
     <>
       <h1 className="title">PRODUCTOS</h1>
       <div className="productos">
-        <div className="producto">
-          <a href="#">
-            <div className="producto_img">
-              <img src={IMG} alt="" />
-            </div>
-          </a>
-          <div className="producto_footer">
-            <h1>Title</h1>
-            <p>Categoria</p>
-            <p className="price">#320</p>
-          </div>
-          <div className="bottom">
-            <button className="btn">Añadir al carrito</button>
-            <div>
-              <a href="#" className="btn">Vista</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="producto">
-          <a href="#">
-            <div className="producto_img">
-              <img src={IMG} alt="" />
-            </div>
-          </a>
-          <div className="producto_footer">
-            <h1>Title</h1>
-            <p>Categoria</p>
-            <p className="price">#320</p>
-          </div>
-          <div className="bottom">
-            <button className="btn">Añadir al carrito</button>
-            <div>
-              <a href="#" className="btn">Vista</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="producto">
-          <a href="#">
-            <div className="producto_img">
-              <img src={IMG} alt="" />
-            </div>
-          </a>
-          <div className="producto_footer">
-            <h1>Title</h1>
-            <p>Categoria</p>
-            <p className="price">#320</p>
-          </div>
-          <div className="bottom">
-            <button className="btn">Añadir al carrito</button>
-            <div>
-              <a href="#" className="btn">Vista</a>
-            </div>
-          </div>
-        </div>
+        {
+          productos.map(producto => (
+            <Productoitem 
+            key={producto.id}
+            id = {producto.id}
+            title = {producto.title}
+            price = {producto.price}
+            image = {producto.image}
+            category = {producto.category}
+            img1 = {producto.img1}
+            img2 = {producto.img2}
+            cantidad = {producto.cantidad}
+            />
+          ))
+        }
       </div>
     </>
   );
