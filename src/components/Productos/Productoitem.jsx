@@ -1,14 +1,22 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import IMG from "../../images/img01.jpg";
+import React, {useContext} from 'react'
+import {Link} from 'react-router-dom'
+import {DataContext} from '../../Context/Dataprovider'
 
 const Productoitem = ({
+    id,
     title,
     price,
     image,
     category,
 }) => {
 
+
+  const value = useContext(DataContext)
+  const addCarrito = value.addCarrito;
+
+  
 
 
   return (
@@ -24,9 +32,9 @@ const Productoitem = ({
       <p className="price">${price}</p>
     </div>
     <div className="bottom">
-      <button className="btn">Añadir al carrito</button>
+      <button className="btn" onClick={()=>{ addCarrito(id)}}>Añadir al carrito</button>
       <div>
-        <a href="#" className="btn">Vista</a>
+      <a href={`/productos/${id}`} className="btn">Vista</a>
       </div>
     </div>
   </div>
