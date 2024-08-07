@@ -5,7 +5,6 @@ import "boxicons";
 import { BrowserRouter as Router } from "react-router-dom";
 import Paginas from "./components/Paginas";
 import {DataProvider} from "./Context/Dataprovider";
-import Carrito from "./components/Carrito/index";
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Carrito />
         <Paginas />
       </Router>
     </div>
